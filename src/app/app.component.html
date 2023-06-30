@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>voter</title>
+  </head>
+  <body>
+    <h1>creating a vote for movie as the first task</h1>
+    <h2>vote for your movie</h2>
+    <br>
+    {{ selectedindex }}
+    <div class="movies" style="display: flex; flex-wrap: wrap;">
+      <div class="movie" style="margin: 30px;">
+        <h3 [hidden]="!isselected(0)">chosen!!</h3>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BZGFmMjM5OWMtZTRiNC00ODhlLThlYTItYTcyZDMyYmMyYjFjXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg"
+          alt="z"
+        />
+        <br>
+        <button [disabled]="anyselected() && !isselected(0)" (click)="votefor(0)">{{ getvotetext(0)}}</button>
+      </div>
+      <div class="movie" style="margin: 30px;">
+        <h3 [hidden]="!isselected(1)">chosen!!</h3>
+
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BNTkyOGVjMGEtNmQzZi00NzFlLTlhOWQtODYyMDc2ZGJmYzFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg"
+          alt="3"
+        />
+        <br>
+
+        <button [disabled]="anyselected() && !isselected(1)" (click)="votefor(1)">{{ getvotetext(1)}}</button>
+      </div>
+      <div class="movie" style="margin: 30px;">
+        <h3 [hidden]="!isselected(2)">chosen!!</h3>
+
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/Chhichhore_Poster.jpg/220px-Chhichhore_Poster.jpg"
+          alt="c"
+        />
+        <br>
+
+        <button [disabled]="anyselected() && !isselected(2)" (click)="votefor(2)">{{ getvotetext(2)}}</button>
+      </div>
+    </div>
+    
+  </body>
+</html>
